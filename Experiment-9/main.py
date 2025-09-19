@@ -34,12 +34,12 @@ outliers = DBSCAN_dataset[DBSCAN_dataset['Cluster']==-1]
 
 fig2, axes = plt.subplots(1,2,figsize=(12,5))
 
-sns.scatterplot('Annual Income (k$)', 'Spending Score (1-100)',
+sns.scatterplot(x='Annual Income (k$)', y='Spending Score (1-100)',
 data=DBSCAN_dataset[DBSCAN_dataset['Cluster']!=-1],
 hue='Cluster', ax=axes[0], palette='Set2',
 legend='full', s=200)
 
-sns.scatterplot('Age', 'Spending Score (1-100)',
+sns.scatterplot(x='Age', y='Spending Score (1-100)',
 data=DBSCAN_dataset[DBSCAN_dataset['Cluster']!=-1],
 hue='Cluster', palette='Set2', ax=axes[1],
 legend='full', s=200)

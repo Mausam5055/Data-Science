@@ -11,7 +11,7 @@ np.random.seed(42)
 matrix = np.random.random((5, 3))
 
 # Perform Singular Value Decomposition
-U, S, Vt = np.linalg.svd(matrix, full_matrices=True)
+U, S, Vt = np.linalg.svd(matrix, full_matrices=False)
 
 # Reconstruct the original matrix from the SVD components
 reconstructed_matrix = np.dot(U, np.dot(np.diag(S), Vt))
@@ -31,3 +31,7 @@ print(Vt)
 # Print the reconstructed matrix
 print("\nReconstructed Matrix:")
 print(reconstructed_matrix)
+
+# Calculate and print the reconstruction error
+reconstruction_error = np.linalg.norm(matrix - reconstructed_matrix)
+print(f"\nReconstruction Error: {reconstruction_error}")
